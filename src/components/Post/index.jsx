@@ -1,13 +1,53 @@
-import { Container } from "./style";
+import { Container, Header, Author, Info, Content, Form, ComentList } from "./style";
+import { Coment } from "../Comment";
 
-export function Post(props) {
-    console.log(props);
-    return (
-        <>
-            <Container>
-                <strong>{props.author}</strong>
-                <p>{props.content}</p>
-            </Container>
-        </>
-    )
+export function Post() {
+  return (
+    <>
+      <Container>
+        <Header>
+          <Author>
+            <img
+              src="https://avatars.githubusercontent.com/u/113571205?v=4"
+              alt="avatar"
+            />
+            <Info>
+              <strong>Ivny Metzker</strong>
+              <span>Student Developer</span>
+            </Info>
+          </Author>
+          <time title="24 de Outubro ás 08:23h" dateTime="2023-24-08 08:13:30">
+            Publicado há 1h
+          </time>
+        </Header>
+
+        <Content>
+          <p>Fala galeraa 👋</p>
+          <p>Acabei de subir mais um projeto no meu </p>portifa. É um projeto
+          que fiz no NLW Return, evento da Rocketseat. O nome do projeto é
+          DoctorCare 🚀
+          <p>
+            👉 <a href="">metzker.developer/doctorcare</a>
+          </p>
+          <p>
+            <a href="">#novoprojeto</a>
+            <a href="">#nlw</a>
+            <a href="">#rocketseat</a>
+          </p>
+        </Content>
+
+        <Form>
+          <strong>Deixe seu feedback</strong>
+          <textarea placeholder="Deixe um comentário" />
+          <button type="submit">Publicar</button>
+        </Form>
+
+        <ComentList>
+          <Coment />
+          <Coment />
+          <Coment />
+        </ComentList>
+      </Container>
+    </>
+  );
 }
