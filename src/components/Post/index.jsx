@@ -1,5 +1,14 @@
-import { Container, Header, Author, Info, Content, Form, ComentList } from "./style";
+import {
+  Container,
+  Header,
+  Author,
+  Info,
+  Content,
+  Form,
+  ComentList,
+} from "./style";
 import { Coment } from "../Comment";
+import { Avatar } from "../Avatar";
 
 export function Post() {
   return (
@@ -7,9 +16,10 @@ export function Post() {
       <Container>
         <Header>
           <Author>
-            <img
+            <Avatar
               src="https://avatars.githubusercontent.com/u/113571205?v=4"
-              alt="avatar"
+              border="4px solid var(--gray-800)"
+              outline="2px solid var(--green-500)"
             />
             <Info>
               <strong>Ivny Metzker</strong>

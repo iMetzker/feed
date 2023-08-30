@@ -1,5 +1,6 @@
-import { Aside, Profile, Button, Avatar, Name, Office } from "./style";
+import { Aside, Profile, Button, Name, Office } from "./style";
 import { PencilSimpleLine } from 'phosphor-react'
+import { Avatar } from "../Avatar";
 
 export function Sidebar() {
   return (
@@ -10,13 +11,10 @@ export function Sidebar() {
                   alt="imagem de capa"
               />
               <Profile>
-                  <Avatar>
-                    <img
-                        src="https://avatars.githubusercontent.com/u/113571205?v=4"
-                        alt="avatar"
-                    />
-                  </Avatar>
-
+                  <Avatar
+                      src="https://avatars.githubusercontent.com/u/113571205?v=4"
+                      border="4px solid var(--gray-800)" outline="2px solid var(--green-500)"
+                  />
                   <Name>Ivny Metzker</Name>
                   <Office>Student Developer</Office>
               </Profile>
