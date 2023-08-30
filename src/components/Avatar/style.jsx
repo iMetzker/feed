@@ -8,5 +8,6 @@ width: 48px;
 height: 48px;
 border: ${(props) => props.hasborder};
 outline: ${(props) => props.hasoutline};
+object-fit: cover;
 }
 `

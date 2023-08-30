@@ -1,3 +1,6 @@
+import { format, formatDistanceToNow } from "date-fns";
+import ptBR from "date-fns/locale/pt-BR";
+
 import {
   Container,
   Header,
@@ -10,40 +13,53 @@ import {
 import { Coment } from "../Comment";
 import { Avatar } from "../Avatar";
 
-export function Post() {
+export function Post({ author, publishedAt, content }) {
+  const publishedDateFormatted = format(
+    publishedAt,
+    "d 'de' LLLL 'ás' HH:mm'h'",
+    {
+      locale: ptBR,
+    }
+  );
+
+  const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
+    locale: ptBR,
+    addSuffix: true,
+  });
+
+    console.log(author);
+
   return (
     <>
       <Container>
         <Header>
           <Author>
             <Avatar
-              src="https://avatars.githubusercontent.com/u/113571205?v=4"
+              src={author.avatarUrl}
               border="4px solid var(--gray-800)"
               outline="2px solid var(--green-500)"
             />
             <Info>
-              <strong>Ivny Metzker</strong>
-              <span>Student Developer</span>
+              <strong>{author.name}</strong>
+              <span>{author.role}</span>
             </Info>
           </Author>
-          <time title="24 de Outubro ás 08:23h" dateTime="2023-24-08 08:13:30">
-            Publicado há 1h
+          <time
+            title={publishedDateFormatted}
+            dateTime={publishedAt.toISOString()}
+          >
+            {publishedDateRelativeToNow}
           </time>
         </Header>
 
         <Content>
-          <p>Fala galeraa 👋</p>
-          <p>Acabei de subir mais um projeto no meu </p>portifa. É um projeto
-          que fiz no NLW Return, evento da Rocketseat. O nome do projeto é
-          DoctorCare 🚀
-          <p>
-            👉 <a href="">metzker.developer/doctorcare</a>
-          </p>
-          <p>
-            <a href="">#novoprojeto</a>
-            <a href="">#nlw</a>
-            <a href="">#rocketseat</a>
-          </p>
+          {content.map((line) => {
+            if (line.type === "paragraph") {
+              return <p>{line.content}</p>;
+            } else if (line.type === 'link') {
+              return <p><a href="">{line.content}</a></p>;
+            }
+          })}
         </Content>
 
         <Form>
