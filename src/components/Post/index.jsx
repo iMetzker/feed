@@ -12,8 +12,6 @@ export function Post({ author, publishedAt, content }) {
   ]);
     const [newCommentText, setNewCommentText] = useState("");
 
-
-
     const publishedDateFormatted = format(
         publishedAt,
         "d 'de' LLLL 'ás' HH:mm'h'",
@@ -36,6 +34,14 @@ export function Post({ author, publishedAt, content }) {
 
     function handleNewCommentChange() {
         setNewCommentText(event.target.value);
+    }
+
+    function deleteComment(commentToDelete) {
+        const commentsWithoutDeletedOne = comments.filter(comment => {
+            return comment !== commentToDelete;
+        })
+
+        setComments(commentsWithoutDeletedOne);
     }
 
     return (
@@ -87,7 +93,13 @@ export function Post({ author, publishedAt, content }) {
 
           <ComentList>
             {comments.map(comment => {
-                return <Coment key={comment} content={comment} />
+                return (
+                    <Coment
+                        key={comment}
+                        content={comment}
+                        onDeleteComment={deleteComment}
+                    />
+                )
             })}
                 </ComentList>
             </Container>
