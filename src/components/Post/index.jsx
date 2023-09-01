@@ -7,9 +7,7 @@ import { Avatar } from "../Avatar";
 import { useState } from "react";
 
 export function Post({ author, publishedAt, content }) {
-  const [comments, setComments] = useState([
-    "Post muito bacana!"
-  ]);
+    const [comments, setComments] = useState(["Post muito bacana!"]);
     const [newCommentText, setNewCommentText] = useState("");
 
     const publishedDateFormatted = format(
@@ -29,20 +27,27 @@ export function Post({ author, publishedAt, content }) {
         event.preventDefault();
 
         setComments([...comments, newCommentText]);
-        setNewCommentText('');
+        setNewCommentText("");
     }
 
     function handleNewCommentChange() {
+        event.target.setCustomValidity("");
         setNewCommentText(event.target.value);
     }
 
+    function handleNewCommentInvalid() {
+        event.target.setCustomValidity("O campo de comentário é obrigatório!");
+    }
+
     function deleteComment(commentToDelete) {
-        const commentsWithoutDeletedOne = comments.filter(comment => {
+        const commentsWithoutDeletedOne = comments.filter((comment) => {
             return comment !== commentToDelete;
-        })
+        });
 
         setComments(commentsWithoutDeletedOne);
     }
+
+    const isNewCommentEmpty = newCommentText.length === 0;
 
     return (
         <>
@@ -87,20 +92,28 @@ export function Post({ author, publishedAt, content }) {
                         name="comment"
                         value={newCommentText}
                         placeholder="Deixe um comentário"
-                        onChange={handleNewCommentChange} />
-                    <button type="submit">Publicar</button>
+                        onChange={handleNewCommentChange}
+                        onInvalid={handleNewCommentInvalid}
+                        required
+                    />
+                    <button
+                        type="submit"
+                        disabled={isNewCommentEmpty}
+                    >
+                        Publicar
+                    </button>
                 </form>
 
-          <ComentList>
-            {comments.map(comment => {
-                return (
-                    <Coment
-                        key={comment}
-                        content={comment}
-                        onDeleteComment={deleteComment}
-                    />
-                )
-            })}
+                <ComentList>
+                    {comments.map((comment) => {
+                        return (
+                            <Coment
+                                key={comment}
+                                content={comment}
+                                onDeleteComment={deleteComment}
+                            />
+                        );
+                    })}
                 </ComentList>
             </Container>
         </>

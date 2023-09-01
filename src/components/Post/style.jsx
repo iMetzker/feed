@@ -40,9 +40,14 @@ export const Container = styled.article`
             font-weight: bold;
             cursor: pointer;
 
-            &:hover {
+            &:hover:not(:disabled) {
                 background: var(--green-300);
                 transition: 0.1s;
+            }
+
+            &:disabled {
+                cursor: not-allowed;
+                opacity: 0.7;
             }
         }
     }
