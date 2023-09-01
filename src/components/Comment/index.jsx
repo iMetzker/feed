@@ -13,8 +13,9 @@ export function Coment({ content, onDeleteComment }) {
     let [likeCount, setLikeCount] = useState(10);
 
     function handleLikeComment() {
-        event.preventDefault();
-        setLikeCount(likeCount + 1);
+        setLikeCount((state) => {
+            return state + 1;
+        });
 
     }
 

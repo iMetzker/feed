@@ -7,7 +7,7 @@ import { Avatar } from "../Avatar";
 import { useState } from "react";
 
 export function Post({ author, publishedAt, content }) {
-    const [comments, setComments] = useState(["Post muito bacana!"]);
+    const [comments, setComments] = useState(["Post muito legal! 👌"]);
     const [newCommentText, setNewCommentText] = useState("");
 
     const publishedDateFormatted = format(

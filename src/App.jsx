@@ -16,7 +16,7 @@ const posts = [
       {
         type: "paragraph",
         content:
-          "Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀",
+          "Acabei de subir este projeto super legal! É meu primeiro projeto da jornada que estou fazendo na trilha Ignite, da Rocketseat. 🚀",
       },
       { type: "link", content: "👉 metzker.developer/doctorcare" },
     ],

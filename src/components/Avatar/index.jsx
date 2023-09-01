@@ -1,12 +1,11 @@
 import { Container } from "./style";
 
-export function Avatar({src, border, outline}) {
+export function Avatar({ border, outline, ...props}) {
   return (
     <Container hasborder={border} hasoutline={outline}>
-      <img
-        src={src}
-        alt="imagem de capa"
-      />
+        <img
+            {...props}
+        />
     </Container>
   );
 }
