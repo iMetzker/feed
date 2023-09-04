@@ -5,7 +5,7 @@ export function Avatar({ border, outline, ...props}) {
     <Container hasborder={border} hasoutline={outline}>
         <img
             {...props}
-        />
+          />
     </Container>
   );
 }

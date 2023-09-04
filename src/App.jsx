@@ -18,9 +18,9 @@ const posts = [
         content:
           "Acabei de subir este projeto super legal! É meu primeiro projeto da jornada que estou fazendo na trilha Ignite, da Rocketseat. 🚀",
       },
-      { type: "link", content: "👉 metzker.developer/doctorcare" },
+      { type: "link", content: "👉 metzker.developer/feed" },
     ],
-    publushedAt: new Date("2023-08-26 20:00:00"),
+    publushedAt: new Date("2023-09-02 20:00:00"),
   },
   {
     id: 2,
@@ -36,9 +36,9 @@ const posts = [
         content:
           "Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀",
       },
-      { type: "link", content: "👉 metzker.developer/doctorcare" },
+      { type: "link", content: "👉 carolina.developer/doctorcare" },
     ],
-    publushedAt: new Date("2023-08-28 15:30:00"),
+    publushedAt: new Date("2023-08-30 15:30:00"),
   },
 ];
 
