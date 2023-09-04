@@ -56,7 +56,7 @@ export function Post({ author, publishedAt, content }) {
                     <Author>
                         <Avatar
                             src={author.avatarUrl}
-                            alt=""
+                            alt="avatar"
                             border="4px solid var(--gray-800)"
                             outline="2px solid var(--green-500)"
                         />

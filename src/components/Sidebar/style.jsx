@@ -33,7 +33,7 @@ a {
     padding: 0 2.4rem;
     font-weight: bold;
     text-decoration: none;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
