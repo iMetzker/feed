@@ -1,7 +1,7 @@
 import "./global.css";
 import { Header } from "./components/Header";
 import { Post } from "./components/Post";
-import { Sidebar } from "./components/SideBar";
+import { Sidebar } from "./components/Sidebar";
 
 const posts = [
   {
