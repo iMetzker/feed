@@ -53,7 +53,7 @@ Para executar a aplicação na sua máquina local, siga estes passos:
 1. Clone o repositório usando o comando:
 
 ```bash
-git clone https://github.com/iMetzker/financial-control.git
+git clone https://github.com/iMetzker/feed.git
 ```
 2. Abra o projeto em seu ambiente de desenvolvimento.
 
